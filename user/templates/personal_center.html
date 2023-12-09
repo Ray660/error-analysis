@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 10px auto;
+
+            width: 800px;
+            max-height: 600px;
+            overflow: auto;
+        {#height: 300px;#} background-color: pink;
+            border: #0C3C26 solid 3px;
+            border-radius: 30px;
+            box-shadow: 2px 5px
+        }
+
+        .review {
+            margin: 10px;
+
+            height: 30px;
+
+            text-align: right;
+        }
+
+        .review a {
+            display: inline-block;
+
+            width: 80px;
+            height: 100%;
+        {#background-color: #20AA76;#} border: #20AA76 solid 2px;
+            border-radius: 5px;
+            box-shadow: 1px 2px;
+
+            text-align: center;
+            line-height: 30px;
+            color: #0C4B33;
+            text-decoration: none;
+        }
+
+        .review a:hover {
+            color: #20AA76;
+        }
+
+        .topic {
+            margin: 10px auto;
+
+            width: 90%;
+            height: 100px;
+            background-color: #fff;
+            border: #0C3C26 dashed 2px;
+            border-radius: 10px;
+            box-shadow: 1px 3px;
+
+            color: #0C3C26;
+        }
+
+        .topic .level {
+            float: left;
+            margin: 45px 5px;
+
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .topic .number {
+            float: left;
+
+            width: 30px;
+            height: 100px;
+
+            line-height: 100px;
+            font-size: 25px;
+        }
+
+        .topic .title {
+            float: left;
+
+            width: 65%;
+            height: 100px;
+
+            font-size: 25px;
+            line-height: 100px;
+            text-indent: 1em;
+        }
+
+        .topic .title a {
+            text-decoration: none;
+            color: #0C3C26;
+        }
+
+        .topic .title a:hover {
+            color: #20AA76;
+        }
+
+        .topic .last_time {
+            float: right;
+
+            width: 25%;
+            height: 100px;
+
+            line-height: 100px;
+        }
+
+        .back_index {
+            margin: 10px auto;
+            width: 800px;
+            height: auto;
+            background-color: pink;
+        }
+        .back_index a {
+            float: left;
+            display: inline-block;
+
+            color: #20AA76;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+{% url 'master:pattern' pattern='knowledge' as knowledge %}
+<div class="box">
+    <div class="review"><a href="{% url 'master:pattern' pattern='error' %}">开始复习</a></div>
+    {% for wpoint in wpoints %}
+        <div class="topic">
+            <div class="level"
+                 style="background-color: {% if wpoint.level_mastery == 1 %}red{% elif wpoint.level_mastery == 2 %}
+                     yellow{% elif wpoint.level_mastery == 3 %}dodgerblue{% elif wpoint.level_mastery == 4 %}greenyellow
+                 {% endif %};"></div>
+            <div class="number">{{ forloop.counter }}.</div>
+            <div class="title"><a
+                    href="{{ knowledge }}?know_pid={{ wpoint.wrong_pointid }}&from=error_note"> {{ wpoint.point.point }}</a>
+            </div>
+            <div class="last_time">{{ wpoint.edited_time }}</div>
+        </div>
+    {% endfor %}
+</div>
+    <div class="back_index">
+        <a href="{% url 'master:index' %}">回到主页</a>
+    </div>
+</body>
+</html>

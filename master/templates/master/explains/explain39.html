@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: center;
+      }
+      a {text-decoration:none;}
+    </style>
+    <div class="select-explain" >
+    <p>
+        Ⓐ &darr; <a href='{% url 'master:explain' point_id=29 %}'>&rarr;</a>   I<sub>2</sub> &darr;
+    </p>
+    <p>
+        水流速度变大？&nbsp;<a href='{% url 'master:explain' point_id=23 %}'>&rarr;</a>&nbsp;P上升？&nbsp;<a href='{% url 'master:explain' point_id=25 %}'>&rarr;</a>&nbsp;R<sub>2</sub>&darr;？
+    </p>
+    <p>&dArr;</p>
+    <p>
+        I<sub>2</sub>&darr;时，R<sub>2</sub>&darr;？
+    </p>
+    <p>
+        Ⓐ&darr;&nbsp;<a href='{% url 'master:explain' point_id=30 %}'>&rarr;</a>&nbsp;I<sub>1</sub>&darr;
+        &nbsp;<a href='{% url 'master:explain' point_id=31 %}'>&rarr;</a>&nbsp;U<sub>1</sub>&darr;
+        &nbsp;<a href='{% url 'master:explain' point_id=28 %}'>&rarr;</a>&nbsp;U<sub>2</sub>&uarr;
+        &nbsp;<a href='{% url 'master:explain' point_id=27 %}'>&rarr;</a>&nbsp;R<sub>2</sub>&uarr;
+    </p>
+    <p>&dArr;</p>
+    <p>电流表示数变小时，表示水流速度减小</p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

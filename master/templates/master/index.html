@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页|刷题模式选择</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            width: 100%;
+            height: 80px;
+            background: #0C4B33;
+
+            color: white;
+        }
+
+        .banner a {
+            display: inline-block;
+            padding: 0 1ch;
+
+            height: 80px;
+            text-decoration: none;
+            color: white;
+            line-height: 80px;
+        }
+
+        .banner a:hover {
+            color: aquamarine;
+        }
+
+        #logo {
+
+            text-align: left;
+            height: 80px;
+
+            line-height: 80px;
+        }
+
+        .pattern {
+
+            height: 80px;
+            font-size: 20px;
+        }
+
+        .pattern ul {
+            list-style: none;
+            height: 80px;
+            text-align: right;
+        }
+
+        .pattern li {
+            display: inline-block;
+            height: 80px;
+        }
+
+        .user {
+            position: relative;
+            height: 80px;
+            font-size: 18px;
+        }
+
+        .user a {
+
+            text-align: right;
+        }
+
+        .content {
+            margin: 50px auto;
+            width: 100%;
+        }
+
+        #introduce {
+            height: 200px;
+
+            color: #0c3c26;
+            font-size: 3.6rem;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        #start_practise {
+            color: white;
+            background-color: #44b78b;
+            padding: 1em 50px 1.1em;
+            text-align: center;
+            margin: 20px 35% 20px 35%;
+            border-radius: 20px;
+        }
+
+        #start_practise a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        #start_practise:hover {
+            background-color: #20AA76;
+        }
+
+        .dropdown-menu {
+            display: none;
+            padding: 10px;
+            position: absolute;
+            background-color: #0C3C26;
+            border: #0C3C26 3px solid;
+            border-radius: 10px;
+            /* 其他样式，例如背景颜色、边距等 */
+        }
+
+        .dropdown-menu a {
+            height: initial;
+            padding: 0;
+            line-height: normal;
+        }
+
+        .user:hover .dropdown-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: aquamarine solid 2px;
+        }
+
+        .topic-upload {
+            position: relative;
+        }
+
+        .type-options {
+            display: none;
+            padding: 10px;
+            position: absolute;
+            left: 90%;
+            top: 0;
+            background-color: #0C3C26;
+            border: #0C3C26 3px solid;
+            border-radius: 10px;
+            width: 100px;
+        }
+        .topic-options a {
+            height: initial;
+            padding: 0;
+            line-height: normal;
+        }
+
+        .topic-upload:hover .type-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: aquamarine solid 2px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="banner" id="top">
+    <div id="logo"><h1>Error Analysis</h1></div>
+    <div class="pattern">
+        <ul>
+            <li>
+                <a href="{% url 'master:pattern' pattern='random' %}">随机刷题</a>|
+            </li>
+            <li>
+                <a href="{% url 'master:pattern' pattern='text' %}">测试模式</a>|
+            </li>
+            <li>
+                <a href="{% url 'master:pattern' pattern='knowledge_index' %}">按知识点刷题</a>|
+            </li>
+            <li>
+                <a href="{% url 'master:pattern' pattern='chapter_index' %}">按章节刷题</a>
+            </li>
+        </ul>
+    </div>
+    <div class="user">
+        {% if user_id %}
+            <a href="{% url 'user:personal' %}">{{ user.username }}</a>
+            <div class="dropdown-menu">
+                <a href="{% url 'user:personal' %}">错题本</a>
+                <div class="topic-upload">
+                    <a href="#">上传题目 ></a>
+                    <div class="type-options">
+                        <!-- 题目类型选项 -->
+                        {% url 'interact:topic_input' as topic_input %}
+                        <a href="{{ topic_input }}?type=s">选择题</a>
+                        <a href="{{ topic_input }}?type=c">填空题</a>
+                        <a href="{{ topic_input }}?type=w">主观题</a>
+                        <!-- 其他类型 -->
+                    </div>
+                </div>
+                <!-- 其他链接 -->
+            </div>
+            / <a href="{% url 'user:logout' %}">退出登录</a>
+        {% else %}
+            <a href="{% url 'user:login' %}">登录</a>/ <a href="{% url 'user:register' %}">注册</a>
+        {% endif %}
+    </div>
+</div>
+<div class="content">
+    <p id="introduce">查漏补缺从错题分析开始</p>
+    <p id="start_practise"><a href="{% url 'master:pattern' pattern='random' %}">开始刷题</a></p>
+</div>
+
+
+</body>
+</html>

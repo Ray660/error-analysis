@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="box">
+
+        <table border="1">
+            <tr>
+                <td>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">I=U<sub>1</sub> / R<sub>1</sub></a> =2V / 30Ω=1/15Ω</p>
+                </td>
+                <td rowspan="2">
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">R<sub>2</sub>=U<sub>2</sub> / I</a> =4V / 1/15A=60Ω</p>
+                </td>
+                <td rowspan="3">
+                    <p class="explain">
+                        &rAarr;A正确
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=28 %}">U<sub>2</sub>=U-U<sub>1</sub></a> =6V-2V=4V</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain">滑动变阻器的最大阻值为50Ω</p>
+                </td>
+                <td>
+                    <p class="explain">&rAarr;再串联一个60Ω-50Ω=10Ω的电阻</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain">电源电压 <a href="{% url 'master:explain' point_id=31 %}">U=I·R</a> <sub>总</sub></p>
+                </td>
+                <td>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=38 %}">R<sub>总</sub>=R<sub>1</sub>+R<sub>2</sub></a> =30Ω+0~50Ω=30Ω~80Ω</p>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">I=U<sub>1</sub> / R<sub>1</sub></a> =2V/30Ω=1/15A</p>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">U=I·R<sub>总</sub></a> =1/15A×30Ω~80Ω=2V~5.3V</p>
+                </td>
+                <td>
+                    <p class="explain">&rAarr;B错误</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">U<sub>1</sub>=I·R<sub>总</sub></a> </p>
+                </td>
+                <td>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">I=U / R<sub>总</sub></a> =6V/30Ω~80Ω=3/40A~0.2A</p>
+                    <p class="explain"><a href="{% url 'master:explain' point_id=31 %}">U<sub>1</sub>=I·R<sub>1</sub></a> =3/40A~0.2A×30Ω=2.25V~6V</p>
+                </td>
+                <td>
+                    <p class="explain">&rAarr;C正确</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock explain %}
+</body>
+</html>

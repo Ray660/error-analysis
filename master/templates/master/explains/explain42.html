@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <p><a href="{% url 'master:explain' point_id=34 %}">游码的最小分度值为0.2g</a></p>
+    <p style="padding-left: 5ch;">&dArr;</p>
+    <p><a href="{% url 'master:explain' point_id=33 %}">石块的质量为：20g+5g+3g=28g</a></p>
+{% endblock explain %}
+</body>
+</html>

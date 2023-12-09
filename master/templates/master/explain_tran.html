@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲解跳转</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: crimson;
+        }
+        a:hover {
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+{% extends 'master/topic.html' %}
+{% block explain %}
+    {% if select.id in show_id %}
+        <a href="/master/knowledge?select_id={{ select.id }}">跳转讲解部分</a>
+
+    {% endif %}
+{% endblock %}
+{% block explain_c %}
+    {% if select.id in show_id %}
+        <a href="/master/knowledge?select_id={{ select.id }}">跳转讲解部分</a>
+
+    {% endif %}
+{% endblock %}
+</body>
+</html>

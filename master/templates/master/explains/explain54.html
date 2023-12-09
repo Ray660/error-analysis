@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+{#    <link rel="stylesheet" href="/media/css/explain49.css">#}
+</head>
+<body>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+<div class="container">
+    <div class="topic_analyse" id="topic_analyse">
+        <h4>请用符号表示题目已知条件</h4>
+        <div id="known" style="display: none">
+            已知：<br>
+            <table>
+                <tr style="padding: 5px;">
+                    <td>m=1.6×10<sup>3</sup>kg;</td>
+                    <td>s=1000m;</td>
+                    <td>t=50s;</td>
+                    <td>W=1.5×10<sup>6</sup>J</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div>
+        <h4 id="q1" class="hidden">(1)该汽车的总动力为</h4>
+        <p id="1" class="hidden">
+            <a href="{% url 'master:explain' point_id=50 %}">G=mg</a>=1.6×10<sup>3</sup>kg × 10N/kg = 1.6×10<sup>4</sup>N
+        </p>
+        <h4 id="q2" class="hidden">(2)汽车匀速形式的速度为</h4>
+        <p id="2" class="hidden">
+            v=<sup>s</sup>&frasl;<sub>t</sub>=<sup>1000m</sup>&frasl;<sub>50s</sub>=20m/s
+        </p>
+        <h4 id="q3" class="hidden">(3)汽车匀速行使时受到的牵引力为</h4>
+        <p id="3" class="hidden">
+            <a href="{% url 'master:explain' point_id=19 %}">F=<sup>W</sup>&frasl;<sub>s</sub></a>=<sup>1.5×10<sup>6</sup>J</sup>&frasl;<sub>1000m</sub>=1500N
+        </p>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="/media/js/explain54.js"></script>
+{% endblock %}
+
+</body>
+</html>

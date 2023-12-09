@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        {#box-sizing: border-box;#}
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            margin: 30px auto;
+        {# 版心居中 #} display: block;
+
+            width: 350px;
+            height: 400px;
+            background-color: #fff;
+            border: #0C3C26 1px solid;
+            border-radius: 10px;
+        }
+
+        {#head area#}
+        .head h2 {
+            width: 350px;
+
+            text-align: center;
+            line-height: 2;
+            color: #0C3C26;
+        }
+
+        {#information area#}
+        .information {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            margin: 10% auto 0;
+            width: 250px;
+            height: 80%;
+        }
+
+        .information form {
+            width: 100%;
+            height: 100%;
+        }
+
+        .information ul {
+            width: 100%;
+            height: 60%;
+        }
+
+        .information li {
+            display: block;
+            width: 100%;
+            height: 20%;
+
+            text-align: center;
+            color: #0C3C26;
+        }
+
+        .information .button {
+            margin: 0 auto;
+            width: 80%;
+            height: 20%;
+            border: none;
+        }
+
+        .information .button p:first-child {
+            height: 80%;
+            width: 100%;
+        }
+
+        .information .button p:last-child {
+            width: 100%;
+        }
+
+        .information .button input {
+            display: block;
+
+            text-align: center;
+            height: 80%;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            background-color: #20AA76;
+            color: white;
+
+            line-height: 100%;
+        }
+
+        .information .button input:hover {
+            color: aquamarine;
+        }
+
+        .information .button a {
+            font-size: 12px;
+        }
+
+        .information strong {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+            font-size: 1em;
+        }
+
+        {% if phonenum == 'no' %}
+            form::after {
+                content: "手机号不可为空";
+                color: crimson;
+            }
+        {% endif %}
+
+        {% if repassword == 'no' %}
+            form::after {
+                content: "请再次输入密码";
+                color: crimson;
+            }
+        {% endif %}
+
+        {% if password == 'no' %}
+            form::after {
+                content: "密码不可为空";
+                color: crimson;
+            }
+        {% endif %}
+
+        {% if username == 'no' %}
+            form::after {
+                content: "用户名不可为空";
+                color: crimson;
+                line-height: 2;
+            }
+        {% endif %}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <h2>用户注册</h2>
+    </div>
+    <div class="information">
+        <form action="{% url 'user:register' %}" method="post">
+            <ul>
+                <li>
+                    <lable><strong>用户名：</strong><input type="text" placeholder="请输入姓名" name="username"></lable>
+                </li>
+                <li>
+                    <lable><strong>密码：</strong><input type="password" placeholder="请输入密码" name="password">
+                    </lable>
+                </li>
+                <li>
+                    <lable><strong>重复密码：</strong><input type="password" placeholder="请再次输入密码"
+                                                            name="repassword"></lable>
+                </li>
+                <li>
+                    <lable><strong>手机号：</strong><input type="text" placeholder="请输入手机号" name="phonenum">
+                    </lable>
+                </li>
+            </ul>
+            <div class="button">
+                <p><input type="submit" value="注册"></p>
+                <p><a href="{% url 'user:login' %}">已有账户？登录</a></p>
+            </div>
+            {% if comment %}
+                <div style="color: crimson; line-height: 2;">
+                    {{ comment }}
+                </div>
+            {% endif %}
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

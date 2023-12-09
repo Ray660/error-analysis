@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .box {
+            margin: 30px auto;
+            border: #0C3C26 solid 2px;
+            border-radius: 30px;
+            box-shadow: #0C3C26 1px 2px;
+
+            width: 50vw;
+            height: 30vw;
+            background-color: white;
+        }
+        .text {
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            width: 70%;
+            height: 60%;
+            background-color: white;
+
+            text-align: center;
+        }
+        .text h1 {
+            margin-bottom: 25px;
+            background-color: white;
+        }
+        .link {
+            margin: 0 auto;
+            background-color: white;
+            text-align: center;
+        }
+        .link ul {
+            list-style: none;
+            display: inline-block;
+            background-color: white;
+        }
+        .link li {
+            display: inline;
+            background-color: #fff;
+            margin: 0 3em;
+
+        }
+        .link a {
+            color: #0C3C26;
+            background-color: #fff;
+            text-decoration: none;
+        }
+        .link a:hover {
+            color: #20AA76;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="text"><h1>恭喜你，完成一组复习</h1></div>
+    <div class="link">
+        <ul>
+            {% if next_group %}
+            <li><a href="{% url 'master:next_group' %}">继续下一组？</a></li>
+            {% endif %}
+            <li><a href="{% url 'master:end_review' %}">休息一下？</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

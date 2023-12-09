@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        章节模式
+    </title>
+    <link rel="stylesheet" href="/media/css/chapter_index.css">
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <div class="logo">
+            <a href="{% url 'master:index' %}">Chapters</a>
+        </div>
+        <div class="editions">
+            {% url 'master:pattern' pattern='chapter_index' as the_url %}
+            <span><a href="">
+                        人教版
+                    </a></span>|
+            <span id="SE" {% if edition == 'SE' %}style="background-color: #20AA76;"{% endif %}>
+                <a href="{{ the_url }}?edition=SE">教科版</a>
+            </span>|
+            <span><a href="">
+                        沪科版
+                    </a></span>|
+            <span><a href="">
+                        北师大版
+                    </a></span>|
+            <span><a href="">
+                        苏科版
+                    </a></span>|
+            <span><a href="">
+                        沪粤版
+                    </a></span>|
+            <span><a href="">
+                        北京课改版
+                    </a></span>|
+            <span><a href="">
+                        沪教版
+                    </a></span>|
+            <span><a href="">
+                        鲁科版
+                    </a></span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="tableofcontent">
+            <div class="grade"><a href="#grade-0" class="grade">八年级上册</a></div>
+            <div class="grade"><a href="#grade-1" class="grade">八年及下册</a></div>
+            <div class="grade"><a href="#grade-2" class="grade">九年级上册</a></div>
+            <div class="grade"><a href="#grade-3" class="grade">九年级下册</a></div>
+        </div>
+        <div class="contents">
+            {% url 'master:pattern' pattern='chapter' as chapter %}
+            <div class="book">
+                <ul>
+                    <li>
+                        <a href="#grade-0" id="grade-0">
+                        </a>
+                        <div class="grade">
+                            <h3>
+                                八年级上册
+                            </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#chapter-0-0" id="chapter-0-0">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        走进实验室
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-0-0" id="nodule-0-0-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=走进实验室：学习科学探究">
+                                                走进实验室：学习科学探究
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-0-1" id="nodule-0-0-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=测量：科学探究的重要环节">
+                                                测量：科学探究的重要环节
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-0-2" id="nodule-0-0-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=活动：降落伞比赛">
+                                                活动：降落伞比赛
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-0-1" id="chapter-0-1">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        运动与能量
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-1-0" id="nodule-0-1-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=认识运动">
+                                                认识运动
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-1-1" id="nodule-0-1-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=运动的描述">
+                                                运动的描述
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-1-2" id="nodule-0-1-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=测量物体运动的速度">
+                                                测量物体运动的速度
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-1-3" id="nodule-0-1-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=能量">
+                                                能量
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-0-2" id="chapter-0-2">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        声
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-2-0" id="nodule-0-2-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=认识声现象">
+                                                认识声现象
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-2-1" id="nodule-0-2-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=乐音的三个特征">
+                                                乐音的三个特征
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-2-2" id="nodule-0-2-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=噪声">
+                                                噪声
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-2-3" id="nodule-0-2-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=声与现代技术">
+                                                声与现代技术
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-0-3" id="chapter-0-3">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        在光的世界里
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-3-0" id="nodule-0-3-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=光源 光的传播">
+                                                光源 光的传播
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-1" id="nodule-0-3-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=光的反射定律">
+                                                光的反射定律
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-2" id="nodule-0-3-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=科学探究：平面镜成像">
+                                                科学探究：平面镜成像
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-3" id="nodule-0-3-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=光的折射">
+                                                光的折射
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-4" id="nodule-0-3-4">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=科学探究：凸透镜成像">
+                                                科学探究：凸透镜成像
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-5" id="nodule-0-3-5">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=神奇的眼睛">
+                                                神奇的眼睛
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-6" id="nodule-0-3-6">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=通过透镜看世界">
+                                                通过透镜看世界
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-3-7" id="nodule-0-3-7">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=走进彩色的世界">
+                                                走进彩色的世界
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-0-4" id="chapter-0-4">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        物态变化
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-4-0" id="nodule-0-4-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=物态变化与温度">
+                                                物态变化与温度
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-4-1" id="nodule-0-4-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=熔化和凝固">
+                                                熔化和凝固
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-4-2" id="nodule-0-4-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=汽化和液化">
+                                                汽化和液化
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-4-3" id="nodule-0-4-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=地球上的水循环">
+                                                地球上的水循环
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-0-5" id="chapter-0-5">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        质量与密度
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-0-5-0" id="nodule-0-5-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=质量">
+                                                质量
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-5-1" id="nodule-0-5-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=物质的密度">
+                                                物质的密度
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-5-2" id="nodule-0-5-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=测量密度">
+                                                测量密度
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-0-5-3" id="nodule-0-5-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=活动：密度知识应用交流会">
+                                                活动：密度知识应用交流会
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#grade-1" id="grade-1">
+                        </a>
+                        <div class="grade">
+                            <h3>
+                                八年及下册
+                            </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#chapter-1-0" id="chapter-1-0">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        力
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-0-0" id="nodule-1-0-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=力">
+                                                力
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-0-1" id="nodule-1-0-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=力的描述">
+                                                力的描述
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-0-2" id="nodule-1-0-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=弹力 弹簧测力计">
+                                                弹力 弹簧测力计
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-0-3" id="nodule-1-0-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=重力">
+                                                重力
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-0-4" id="nodule-1-0-4">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=摩檫力">
+                                                摩檫力
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-1-1" id="chapter-1-1">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        力与运动
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-1-0" id="nodule-1-1-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=牛顿第一定律 惯性">
+                                                牛顿第一定律 惯性
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-1-1" id="nodule-1-1-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=力的平衡">
+                                                力的平衡
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-1-2" id="nodule-1-1-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=力改变物体的运动状态">
+                                                力改变物体的运动状态
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-1-2" id="chapter-1-2">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        压强
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-2-0" id="nodule-1-2-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=压强">
+                                                压强
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-2-1" id="nodule-1-2-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=液体的压强">
+                                                液体的压强
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-2-2" id="nodule-1-2-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=连通器">
+                                                连通器
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-2-3" id="nodule-1-2-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=大气压强">
+                                                大气压强
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-1-3" id="chapter-1-3">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        流体的力现象
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-3-0" id="nodule-1-3-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=在流体中运动">
+                                                在流体中运动
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-3-1" id="nodule-1-3-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=认识浮力">
+                                                认识浮力
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-3-2" id="nodule-1-3-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=科学探究：浮力的大小">
+                                                科学探究：浮力的大小
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-3-3" id="nodule-1-3-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=沉与浮">
+                                                沉与浮
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-1-4" id="chapter-1-4">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        机械与功
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-4-0" id="nodule-1-4-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=杠杆">
+                                                杠杆
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-4-1" id="nodule-1-4-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=滑轮">
+                                                滑轮
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-4-2" id="nodule-1-4-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=功 功率">
+                                                功 功率
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-4-3" id="nodule-1-4-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=机械效率">
+                                                机械效率
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-4-4" id="nodule-1-4-4">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=改变世界的机械">
+                                                改变世界的机械
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-1-5" id="chapter-1-5">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        机械能
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-1-5-0" id="nodule-1-5-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=机械能">
+                                                机械能
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-5-1" id="nodule-1-5-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=机械能的转化">
+                                                机械能的转化
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-1-5-2" id="nodule-1-5-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=水能和风能">
+                                                水能和风能
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#grade-2" id="grade-2">
+                        </a>
+                        <div class="grade">
+                            <h3>
+                                九年级上册
+                            </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#chapter-2-0" id="chapter-2-0">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        分子动理论与内能
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-0-0" id="nodule-2-0-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=分子动理论">
+                                                分子动理论
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-0-1" id="nodule-2-0-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=内能和热量">
+                                                内能和热量
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-0-2" id="nodule-2-0-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=比热容">
+                                                比热容
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-1" id="chapter-2-1">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        改变世界的热机
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-1-0" id="nodule-2-1-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=热机">
+                                                热机
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-1-1" id="nodule-2-1-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=内燃机">
+                                                内燃机
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-1-2" id="nodule-2-1-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=热机效率">
+                                                热机效率
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-2" id="chapter-2-2">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        认识电路
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-2-0" id="nodule-2-2-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电现象">
+                                                电现象
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-2-1" id="nodule-2-2-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电路">
+                                                电路
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-2-2" id="nodule-2-2-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电路的连接">
+                                                电路的连接
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-2-3" id="nodule-2-2-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=活动：电路创新及展示">
+                                                活动：电路创新及展示
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-3" id="chapter-2-3">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        探究电流
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-3-0" id="nodule-2-3-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电流">
+                                                电流
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-3-1" id="nodule-2-3-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电压：电流产生的原因">
+                                                电压：电流产生的原因
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-3-2" id="nodule-2-3-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电阻：导体对电流的阻碍作用">
+                                                电阻：导体对电流的阻碍作用
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-4" id="chapter-2-4">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        欧姆定律
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-4-0" id="nodule-2-4-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=欧姆定律">
+                                                欧姆定律
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-4-1" id="nodule-2-4-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=测量电阻">
+                                                测量电阻
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-4-2" id="nodule-2-4-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=等效电路">
+                                                等效电路
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-5" id="chapter-2-5">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        电功率
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-5-0" id="nodule-2-5-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电功">
+                                                电功
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-5-1" id="nodule-2-5-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电功率">
+                                                电功率
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-5-2" id="nodule-2-5-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=焦耳定律">
+                                                焦耳定律
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-5-3" id="nodule-2-5-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=灯泡的电功率">
+                                                灯泡的电功率
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-6" id="chapter-2-6">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        磁与电
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-6-0" id="nodule-2-6-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=磁现象">
+                                                磁现象
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-6-1" id="nodule-2-6-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电流的磁场">
+                                                电流的磁场
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-6-2" id="nodule-2-6-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电磁铁">
+                                                电磁铁
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-6-3" id="nodule-2-6-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电磁继电器">
+                                                电磁继电器
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-2-7" id="chapter-2-7">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        电磁相互作用及应用
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-2-7-0" id="nodule-2-7-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电磁感应现象">
+                                                电磁感应现象
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-7-1" id="nodule-2-7-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=磁场对电流的作用">
+                                                磁场对电流的作用
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-2-7-2" id="nodule-2-7-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电话和传感器">
+                                                电话和传感器
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#grade-3" id="grade-3">
+                        </a>
+                        <div class="grade">
+                            <h3>
+                                九年级下册
+                            </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#chapter-3-0" id="chapter-3-0">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        家庭电路
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-3-0-0" id="nodule-3-0-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=家用电器">
+                                                家用电器
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-0-1" id="nodule-3-0-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=家庭电路">
+                                                家庭电路
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-0-2" id="nodule-3-0-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=安全用电与保护">
+                                                安全用电与保护
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-0-3" id="nodule-3-0-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=家庭生活自动化、智能化">
+                                                家庭生活自动化、智能化
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-3-1" id="chapter-3-1">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        电磁波与信息技术
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-3-1-0" id="nodule-3-1-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=神奇的电波">
+                                                神奇的电波
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-1-1" id="nodule-3-1-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=电磁波的应用">
+                                                电磁波的应用
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-1-2" id="nodule-3-1-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=改变世界的信息技术">
+                                                改变世界的信息技术
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#chapter-3-2" id="chapter-3-2">
+                                </a>
+                                <div class="chapter">
+                                    <h4>
+                                        物理学与能源技术
+                                    </h4>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#nodule-3-2-0" id="nodule-3-2-0">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=能量守恒定律">
+                                                能量守恒定律
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-2-1" id="nodule-3-2-1">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=能量转化的方向性和效率">
+                                                能量转化的方向性和效率
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-2-2" id="nodule-3-2-2">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=能源">
+                                                能源
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-2-3" id="nodule-3-2-3">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=核能">
+                                                核能
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#nodule-3-2-4" id="nodule-3-2-4">
+                                        </a>
+                                        <div class="nodule">
+                                            <a href="{{ chapter }}?nodule=能源开发与可持续发展">
+                                                能源开发与可持续发展
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

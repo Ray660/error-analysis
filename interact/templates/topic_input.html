@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>题目上传</title>
+    <link rel="stylesheet" href="{% static 'interact/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'interact/css/topic_input.css' %}">
+    <link rel="stylesheet" href="{% static 'interact/css/add_explain.css' %}">
+</head>
+<body>
+{% url 'interact:topic_input' as topic_input %}
+<form action="{{ topic_input }}?type={{ type }}" method="post" enctype="multipart/form-data">
+    <div class="box">
+        <div class="inputBox">
+            <div></div>
+            <div class="input">
+                <div class="topic_input">
+                    <textarea class="topicInput" placeholder="请输入题目" id="topic0" name="topic0"></textarea>
+                </div>
+                <div class="select_input">
+                    <div class="top">
+                        <a href="#" id="addOption">+增加选项</a>
+                    </div>
+                    <div class="selects" id="selectsContainer">
+                        <div class="select">
+                            <div class="num">
+                                {% if type == 's' %}
+                                    选项1
+                                {% elif type == 'c' %}
+                                    填空1
+                                {% else %}
+                                    小题1
+                                {% endif %}
+                            </div>
+                            <div class="insertCase">
+                                <textarea class="selectInput" placeholder="请输入选项内容" id="select10"
+                                          name="select10"></textarea>
+                            </div>
+                            <div class="dele"><a href="#" class="delOption">删除</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="button">
+            <div class="special_symbols">
+                <h3>插入</h3>
+                <ul>
+                    <li class="symbol"><a href="#" class="insertSymbol">Ⓐ</a></li>
+                    <li class="symbol"><a href="#" class="insertSymbol">Ⓥ</a></li>
+                    <li class="symbol"><a href="#" class="insertSymbol">Ω</a></li>
+                    <li class="symbol"><a href="#" class="insertSymbol">ρ</a></li>
+                    <li class="symbol"><a href="#" class="insertSymbol">&rArr;</a></li>
+                    <li class="symbol"><a href="#" class="insertSymbol">&dArr;</a></li>
+                    <li class="symbol"><a href="#" class="superscript">X<sup>2</sup></a></li>
+                    <li class="symbol"><a href="#" class="subscript">X<sub>2</sub></a></li>
+                    <li class="symbol"><a href="#" class="insertInput" id="insertImage">图</a></li>
+                    <li class="symbol"><a href="#" class="insertInput" id="insertText">文</a></li>
+                    {% if type == 'c' %}
+                        <li class="symbol"><a href="#" class="insertEmpty">空</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="redirect_button">
+                <ul>
+                    <li><input type="submit" value="保存题目" name="save"></li>
+                    <li><a href="#" id="add_explain">增加讲解</a></li>
+                    <li><a href="{% url 'master:index' %}">回到主页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="{% static 'interact/js/topic_input.js' %}"></script>
+<script src="{% static 'interact/js/add_explain.js' %}"></script>
+</body>
+</html>

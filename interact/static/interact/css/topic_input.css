@@ -1,0 +1,237 @@
+body {
+    background-color: #f6f8fc;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: 50vw;
+    background-color: #f6f8fc;
+}
+
+.inputBox {
+    margin-left: 10px;
+    overflow: hidden;
+    width: 75%;
+    height: 90%;
+    background-color: #fff;
+    border: #0C4B33 solid 2px;
+    box-shadow: #0C3C26 3px 2px;
+    border-radius: 30px;
+    position: relative;
+    z-index: 0;
+}
+
+.inputBox > div:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    margin-right: 10px;
+
+    width: 20%;
+    height: 90%;
+    background-color: #f6f8fc;
+}
+
+/*input*/
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #0C3C26;
+}
+
+.input .topic_input {
+    margin-top: 5px;
+
+    width: 95%;
+    height: 38%;
+    max-height: 38%;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    border-right: 1px solid #f2f6fc;
+    border-bottom: 2px solid #f2f6fc;
+    box-shadow: #f2f6fc 1px 2px;
+}
+
+.input .select_input {
+    margin-bottom: 5px;
+
+    width: 95%;
+    height: 58%;
+    max-height: 58%;
+    overflow: hidden;
+    background-color: #f2f6fc;
+    border-radius: 20px;
+    box-shadow: 2px 1px;
+}
+
+/*topic_input*/
+.topic_input textarea {
+    display: block;
+    margin: 2px auto;
+
+    width: 98%;
+    height: auto;
+    border: none;
+    background-color: #fff;
+
+    font-size: 20px;
+}
+
+/*select_input*/
+.select_input .top {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    height: 15%;
+}
+
+.select_input .top a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0C3C26;
+}
+
+.select_input .top a:hover {
+    color: #20AA76;
+}
+
+.select_input .selects {
+    /*margin-top: 5%;*/
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    overflow: auto;
+}
+
+.select_input .select {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 25%;
+    background-color: #d3e3fd;
+    border-top: #bdc0c4 1px solid;
+    border-bottom: #bdc0c4 1px solid;
+}
+
+.select_input .select .insertCase {
+    width: 80%;
+    height: 100%;
+    background-color: #d3e3fd;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.select_input .select textarea {
+    width: 100%;
+    height: auto;
+    background-color: #d3e3fd;
+    border: none;
+
+    font-size: 16px;
+}
+
+/*button*/
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button .special_symbols {
+
+    width: 90%;
+    height: 50%;
+    background-color: #f6f8fc;
+}
+
+.button .redirect_button {
+    width: 90%;
+    height: 35%;
+    background-color: #f6f8fc;
+}
+
+.button .special_symbols h3 {
+    color: #0C3C26;
+    text-align: center;
+}
+
+.button .special_symbols ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.button .special_symbols .symbol {
+    display: flex;
+    align-items: center;
+
+    width: 20%;
+    background-color: #f6f8fc;
+    border-radius: 10px;
+}
+
+.button .special_symbols .symbol:hover {
+    background-color: #d3e3fd;
+}
+
+.button .special_symbols .symbol a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+
+/*redirect_button*/
+.redirect_button ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 5px auto;
+
+    width: 90%;
+    height: 90%;
+}
+
+.redirect_button ul li {
+    width: 50%;
+    height: 20%;
+}
+
+.redirect_button ul input, .redirect_button ul a {
+    display: inline-block;
+    padding: 5% 10%;
+    background-color: #20AA76;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.redirect_button ul input:hover, .redirect_button ul a:hover {
+    color: #f6f8fc;
+}

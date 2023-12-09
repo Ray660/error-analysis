@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.idea/
+db.sqlite3
+error_analysis/settings.py
+media/image
+media/video

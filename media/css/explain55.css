@@ -1,0 +1,14 @@
+.title {
+    display: none;
+}
+
+
+.leader {
+    /*color: green;*/
+    display: none;
+}
+
+.answer {
+    padding-left: 2ch;
+    display: none;
+}

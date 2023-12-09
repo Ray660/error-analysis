@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="container">
+        <div class="hidden" id="airplane1" style="display: none">
+            <img src="/media/image/屏幕截图_2023-11-08_200037.png" alt="飞机1">
+        </div>
+        <div class="hidden" id="airplane2" style="display: none;">
+            <p>重力的作用点在重心，重力的方向竖直向下，所以示意图如图所示：</p>
+            <p>
+                <img src="/media/image/屏幕截图_2023-11-08_200037-2.png" alt="飞机2">
+            </p>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script src="/media/js/explain49.js"></script>
+{% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主观题讲解模板</title>
+</head>
+<body>
+<div class="topic">
+{# 显示题目 #}
+<h1>题目：</h1>
+<p>
+    {{ topic.id }} {{ topic.topic|safe }}
+</p>
+{% if topic.photo %}
+    <img  id='image' src=" media/{{ topic.photo }}" >
+{% endif %}
+</div>
+
+<hr>
+
+{% block explain-w %}
+
+
+
+{% endblock %}
+<button id="nextButton" style="display: block;">下一步</button>
+<div id="back" style="display: none">
+    <a href="#" onclick="history.back();">返回上一页</a>
+</div>
+
+{% block javascript %}
+{#<script src="/media/js/explain{{ select.id }}.js"></script>#}
+{% endblock %}
+
+<hr>
+
+<div class="knowledge">
+    <h1>知识点讲解：</h1>
+    {% for point in points %}
+        <div class="point">
+            <h2>{{ point.point }}</h2>
+        </div>
+        <div class="explain">
+        {% if point.url %}
+            <h3>观看视频：</h3>
+            <a href="{{ point.url }}" target="_blank">点击链接跳转</a><br>
+        {% endif %}
+        {% if point.video %}
+            <h3>观看视频：</h3>
+            <video id="media" src="media/{{ point.video }}" width="640" height="480" controls>您的浏览器不支持 video 标签 </video>
+            <br>
+        {% endif %}
+        {% if point.text %}
+            <h3>文字讲解：</h3>
+            {{ point.text|safe }}<br>
+        {% endif %}
+        {% if point.photo %}
+            <h3>图形讲解：</h3>
+            <img id="image" src="media/{{ point.photo }}">
+        {% endif %}
+        {% if not point.url and not point.video and not point.text %}
+            目前还没有相关知识点讲解
+        {% endif %}
+            <br>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>

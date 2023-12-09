@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: center;
+      }
+      table.aligned-text {
+          display: inline-block;
+          text-align: left;
+          ;
+        }
+
+      td {
+          width: 20ch;
+      }
+      .array {
+          width: 5ch;
+      }
+    </style>
+    <div class="select-explain" >
+
+    <table class="aligned-text">
+        <tr>
+            <td>分析图甲：</td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'master:explain' point_id=26 %}">滑动变阻器与小灯泡L串联</a></td>
+            <td class="array">&nbsp; <a href="{% url 'master:explain' point_id=30 %}">&rarr;</a> &nbsp;</td>
+            <td>电流表的示数=I<sub>滑</sub>=I<sub>L</sub></td>
+        </tr>
+        <tr style="padding: 1ch;">
+            <td><a href="{% url 'master:explain' point_id=24 %}">电压表Ⓥ<sub>2</sub>测滑动变阻器的电压U<sub>滑</sub></a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'master:explain' point_id=24 %}">电压表Ⓥ<sub>1</sub>测小灯泡L的电压U<sub>L</sub></a></td>
+        </tr>
+    </table>
+
+        <p><hr></p>
+
+    <table class="aligned-text">
+        <tr style="text-align: center;">
+            <td>滑片P由a端移向b端</td>
+            <td class="array"><a href="{% url 'master:explain' point_id=25 %}">&rarr;</a></td>
+            <td>滑动变阻器的电阻R<sub>滑</sub>不断减小</td>
+            <td class="array">&rarr;</td>
+            <td>
+                <table class="insert">
+                    <tr>
+                        <td><a href="{% url 'master:explain' point_id=38 %}">R<sub>总</sub>不断减小</a></td>
+                        <td class="array"><a href="{% url 'master:explain' point_id=31 %}">&rarr;</a></td>
+                        <td>电流表示数不断增大</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% url 'master:explain' point_id=28 %}">总电压U不变，滑动变阻器分得的电压U<sub>滑</sub>不断减小</a></td>
+                        <td class="array"><a href="{% url 'master:explain' point_id=28 %}">&rarr;</a></td>
+                        <td>小灯泡L分得的电压U<sub>L</sub>不断增大</td>
+                    </tr>
+                </table>
+            </td>
+            <td class="array">&rarr;</td>
+            <td>图乙中，①为Ⓥ<sub>1</sub>=U<sub>L</sub>②为 Ⓥ<sub>2</sub>=U<sub>滑</sub></td>
+        </tr>
+    </table>
+    <br class="array">&dArr;<br>
+    <table class="aligned-text">
+        <tr style="text-align: center">
+            <td>
+               当滑片P在a端时，电流表示数最小，由图乙可知，此时电流表示数为0.1A，U<sub>L</sub>=0.5V，U<sub>滑</sub>=4V
+            </td>
+            <td class="array"><a href="{% url 'master:explain' point_id=28 %}">&rarr;</a></td>
+            <td>电源电压U=U<sub>L</sub>+U<sub>滑</sub>=4.5V</td>
+        </tr>
+    </table>
+
+    </div>
+{% endblock explain %}
+</body>
+</html>

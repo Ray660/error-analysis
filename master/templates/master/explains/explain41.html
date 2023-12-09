@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: center;
+      }
+      table.aligned-text {
+          display: inline-block;
+          text-align: left;
+        }
+      table.aligned-text >p {
+          display: inline-block;
+          text-align: center;
+      }
+
+    </style>
+    <div class="select-explain" >
+
+    <table class="aligned-text">
+        <tr style="text-align: center;">
+            <td>总功率P的取值范围？</td>
+            <td>&nbsp; <a href="{% url 'master:explain' point_id=32 %}">&rarr;</a> &nbsp;</td>
+            <td>
+                <p>U&sup2;&frasl;R<sub>min</sub>?</p>
+                <p>U&sup2;&frasl;R<sub>max</sub>?</p>
+            </td>
+            <td style="padding: 20px">
+                <p style="font-size: 10px">总电压不变</p>
+                <p>&rarr;</p>
+            </td>
+            <td>
+                <p>R<sub>min</sub>?</p>
+                <p>R<sub>max</sub>?</p>
+            </td>
+            <td style="padding: 20px">&rarr;</td>
+            <td>
+                <p>R<sub>2min</sub>?</p>
+                <p>R<sub>2max</sub>?</p>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table class="aligned-text">
+        <tr style="text-align: center;">
+            <td>&dArr;</td>
+        </tr>
+    </table>
+    <br>
+    <table class="aligned-text">
+        <tr style="text-align: center">
+            <td>
+                <p> 由选项3可知：</p>
+                <p><a href="/master/knowledge?select_id=40">2.5Ω &le; R<sub>2</sub> &le; 10Ω</a></p>
+            </td>
+            <td>&nbsp; <a href="{% url 'master:explain' point_id=32 %}">&rarr;</a> &nbsp;</td>
+            <td>1.35W &le; P &le; 2.7W</td>
+        </tr>
+    </table>
+
+    </div>
+{% endblock explain %}
+</body>
+</html>

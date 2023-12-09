@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: left;
+      }
+    </style>
+    <div class="select-explain" >
+
+    <p>由图中小磁针可知：</p>
+        <p><img src="/media/image/屏幕截图%202023-11-09%20212941-2.png" alt="题15附图1"></p>
+
+    <p>
+        &dArr;由 <a href="{% url 'master:explain' point_id=50 %}">右手螺旋定则</a>
+    </p>
+
+    <p>
+        <img src="/media/image/屏幕截图%202023-11-09%20212941-3.png" alt="题15附图2">
+    </p>
+
+    <p>&dArr;电流从电源正极出发流向负极</p>
+
+    <p>
+        （）中填+
+    </p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

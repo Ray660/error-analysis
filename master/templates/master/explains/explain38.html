@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: center;
+      }
+      a {text-decoration:none;}
+    </style>
+    <div class="select-explain" >
+    <p>
+        &#x24CB;&uarr; <a href='{% url 'master:explain' point_id=24 %}'>&rarr;</a>   U<sub>2</sub>&uarr;
+    </p>
+    <p>
+        水流速度变大？&nbsp;<a href='{% url 'master:explain' point_id=23 %}'>&rarr;</a>&nbsp;P上升？&nbsp;<a href='{% url 'master:explain' point_id=25 %}'>&rarr;</a>&nbsp;R<sub>2</sub>&darr;？
+    </p>
+    <p>&dArr;</p>
+    <p>
+        U<sub>2</sub>&uarr;时，R<sub>2</sub>&darr;？
+    </p>
+    <p>
+        <a href="{% url 'master:explain' point_id=26 %}">R<sub>1</sub>、R<sub>2</sub>串联</a>
+        &nbsp;&rarr;&nbsp;
+        <a href="{% url 'master:explain' point_id=28 %}">串联分压</a>
+        &nbsp;<a href='{% url 'master:explain' point_id=27 %}'>&rarr;</a>&nbsp;
+        U<sub>2</sub>&uarr;&rArr;R<sub>2</sub>&uarr;
+    </p>
+    <p>&dArr;</p>
+    <p>电压表示数变大时，表示水流速度减小</p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

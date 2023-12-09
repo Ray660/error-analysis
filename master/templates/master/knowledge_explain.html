@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知识点讲解</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            background-color: #0C3C26;
+
+            color: #f9f9f9;
+            line-height: 2;
+            text-indent: 1em;
+        }
+
+        .knowledge_explain {
+            margin: 15px auto;
+            width: 90%;
+            color: #0C3C26;
+            line-height: 2;
+        }
+
+        .knowledge_explain .explain {
+            display: inline;
+        }
+
+        .knowledge_explain a, .button a {
+            text-decoration: none;
+            color: #0C3C26;
+        }
+
+        .knowledge_explain a:hover, .button a:hover {
+            color: #20AA76;
+        }
+
+        .button {
+            padding-left: 2rem;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<h2>知识点讲解</h2>
+<div class="knowledge_explain">
+    {% if not points %}
+        没有相关知识点
+    {% else %}
+        {% for point in points %}
+            <div class="point">
+                <h3>{{ point.point|safe }}</h3>
+            </div>
+            <div class="explain">
+                {% if point.url %}
+                    <table>
+                        <tr>
+                            <td><h4>观看视频：</h4></td>
+                            <td><a href="{{ point.url }}" target="_blank">点击链接跳转</a><br></td>
+                        </tr>
+                    </table>
+                {% endif %}
+                {% if point.video %}
+                    <table>
+                        <tr>
+                            <td><h4>观看视频：</h4></td>
+                            <td>
+                                <video id="media" src="media/{{ point.video }}" width="640" height="480" controls
+                                       preload="auto">
+                                    您的浏览器不支持 video
+                                    标签
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                {% endif %}
+                {% if point.text %}
+                    <table>
+                        <tr>
+                            <td><h4>文字讲解：</h4></td>
+                            <td>
+                                {{ point.text|safe }}
+                            </td>
+                        </tr>
+                    </table>
+                {% endif %}
+                {% if point.photo %}
+                    <table>
+                        <tr>
+                            <td><h4>图形讲解：</h4></td>
+                            <td>
+                                <img id="image" src="media/{{ point.photo }}">
+                            </td>
+                        </tr>
+                    </table>
+                {% endif %}
+                {% if not point.url and not point.video and not point.text %}
+                    目前还没有相关知识点讲解
+                {% endif %}
+                <br>
+            </div>
+            <div class="further_practice">
+                {% url 'master:pattern' pattern='knowledge' as knowledge %}
+                <a href="{{ knowledge }}?know_pid={{ point.id }}">刷这个知识点的题</a>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+</div>
+<div>
+    <div class="button"><a href="#" onclick="history.back();">返回上一页</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+    <link rel="stylesheet" href="/media/css/explain55.css">
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="question" id="q1">
+        <h3 class="title" style="display: block">（1）</h3>
+        <div class="leader" id="l11" style="display: block">
+            <p>用数学符号在草稿本上列出已知条件</p>
+        </div>
+        <div class="answer" id="a11">
+            <p>U=220V; P<sub>低</sub>=100W; P<sub>高</sub>=500W</p>
+        </div>
+        <div class="leader" id="l12">
+            <p>应该考虑开关S闭合还是打开的情况？为什么？</p>
+        </div>
+        <div class="answer" id="a12">
+            <p>闭合。因为 <a href="{% url 'master:explain' point_id=44 %}">此时R<sub>2</sub>短路</a> ，只有R<sub>1</sub>接入电路
+            </p>
+        </div>
+        <div class="leader" id="l13">
+            <p>在草稿本上画出S闭合时的电路图，并明确此时的电功率</p>
+        </div>
+        <div class="answer" id="a13">
+            <p>S闭合时的电路图如下：</p>
+            <img src="/media/image/18tift.png" alt="S闭合电路图" width="300" height="250">
+            <p>由题知：此时为高温档。则功率P=P<sub>高</sub>=500W</p>
+        </div>
+        <div class="leader" id="l14">
+            <p>计算R<sub>1</sub></p>
+        </div>
+        <div class="answer" id="a14">
+            <p>
+                <a href="{% url 'master:explain' point_id=32 %}">由P=U<sup>2</sup>/R</a>
+                &nbsp;&rarr;&nbsp;
+                R<sub>1</sub>=U<sup>2</sup>/P<sub>高</sub>=(220V)<sup>2</sup>/500W=96.8Ω
+            </p>
+        </div>
+    </div>
+    <div class="question" id="q2">
+        <h3 class="title" id="t2">（2）</h3>
+        <div class="leader" id="l21">
+            <p>用数学符号在草稿本上列出已知条件</p>
+        </div>
+        <div class="answer" id="a21">
+            <p>U=220V; P<sub>低</sub>=100W; P<sub>高</sub>=500W; R<sub>1</sub>=96.8Ω; t=10min=600s;
+                W=1.32×10<sup>5</sup>J</p>
+        </div>
+        <div class="leader" id="l22">
+            <p>电熨斗的工作状态哪有几种？</p>
+        </div>
+        <div class="answer" id="a22">
+            <p>3种：全程低档；全程高档；有高档有低挡</p>
+        </div>
+        <div class="leader" id="l23">
+            <p>这段时间内，电熨斗处于哪个工作状态？</p>
+        </div>
+        <div class="answer" id="a23">
+            <p>
+                平均功率<a href="{% url 'master:explain' point_id=19 %}">P=W/t</a>=1.32×10<sup>5</sup>J/t=10min=600s=220W
+            </p>
+            <p>
+                平均功率P ≠ P<sub>低</sub> ≠ P<sub>高</sub>
+            </p>
+            <p>
+                因此，电熨斗的工作状态时有高档有低档
+            </p>
+        </div>
+        <div class="leader" id="l24">
+            <p>电熨斗处于高档和低档的工作时间各位多少？</p>
+        </div>
+        <div class="answer" id="a24">
+            <p>
+                设高档时间为x，那么低档的时间为t-x
+            </p>
+            <p>
+                由W=pt
+                &nbsp;&rarr;&nbsp;
+                W=P<sub>低</sub>·(t-x)+P<sub>高</sub>·x
+                &nbsp;&rarr;&nbsp;
+                1.32×10<sup>5</sup>J=100W·(600s-x)+500W·x
+            </p>
+            <p>
+                解方程得：x=120s,t-x=480s
+            </p>
+            <p>
+                即：高档120s，低档480s
+            </p>
+        </div>
+    </div>
+    <div class="question" id="q3">
+        <h3 class="title" id="t3">（3）</h3>
+        <div class="leader" id="l31">
+            <p>思考：如何才能保持熨斗表面保持220℃不变？</p>
+        </div>
+        <div class="answer" id="a31">
+            <p>
+                释放 与散失热量相同的热量
+            </p>
+        </div>
+        <div class="leader" id="l32">
+            <p>
+                计算：散失的热量为多少？
+            </p>
+        </div>
+        <div class="answer" id="a32">
+            <p>
+                由题：&Delta;t=220℃-20℃=200℃
+            </p>
+            <p>
+                由图丁：当&Delta;t=200℃时，每秒散失热量Q=400J
+            </p>
+        </div>
+        <div class="leader" id="l33">
+            <p>
+                为了每秒释放400J热量，电熨斗的<strong>总电阻</strong>应该为多少？
+            </p>
+        </div>
+        <div class="answer" id="a33">
+            <p>
+                每秒释放400J
+                &nbsp;&rarr;&nbsp;
+                P=400W
+            </p>
+            <p>
+                由P=U<sup>2</sup>/R
+                &nbsp;&rarr;&nbsp;
+                R=U<sup>2</sup>/P=(220V)<sup>2</sup>/400W=121Ω
+            </p>
+        </div>
+        <div class="leader" id="l34">
+            <p>
+                计算R<sub>3</sub>
+            </p>
+        </div>
+        <div class="answer" id="a34">
+            <table>
+                <tr>
+                    <td>
+                        由图丙：<a href="{% url 'master:explain' point_id=26 %}">R<sub>1</sub>与R<sub>3</sub>串联</a>
+                    </td>
+                    <td rowspan="2">
+                        &rArr;
+                    </td>
+                    <td rowspan="2">
+                        R<sub>3</sub>=R-R<sub>1</sub>=121Ω-96.8Ω=24.2Ω
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        由问题1：R<sub>1</sub>=96.8Ω
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="/media/js/explain55.js"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目预览</title>
+    {% extends 'master/topic.html' %}
+</head>
+<body>
+{% block button %}
+    <style>
+        a {
+            text-decoration: none;
+            color: #0C3C26;
+        }
+        a:hover {
+            color: #20AA76;
+        }
+    </style>
+    <div class="back">
+        <a href="{% url 'master:index' %}">回到主页</a>
+    </div>
+    <div class="addNext">
+        {% url 'interact:topic_input' as topic_input %}
+        <a href="{{ topic_input }}?type=s">添加下一道选择题</a>
+        <a href="{{ topic_input }}?type=c">添加下一道填空题</a>
+        <a href="{{ topic_input }}?type=w">添加下一道主观题</a>
+    </div>
+{% endblock %}
+</body>
+</html>

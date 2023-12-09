@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="box">
+        <p class="explain">将水袋逐渐浸入水中，水袋排开水的体积变大</p>
+        <p>&dArr;</p>
+        <p class="explain">由浮力 <a href="{% url 'master:explain' point_id=45 %}">F<sub>浮</sub>=ρ⋅g⋅V<sub>排</sub></a>可知：</p>
+        <p class="explain">V<sub>排</sub>变大，则F<sub>浮</sub>变大</p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

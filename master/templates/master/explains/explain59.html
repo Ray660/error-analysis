@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="box">
+        <p class="explain">
+            <span>将水袋浸没在水中，静止时弹簧测力计示数为0N</span>
+            <span>&rarr;</span>
+            <span>此时F<sub>浮</sub>=G</span>
+        </p>
+        <p class="explain">
+            <span>排开水的体积V<sub>排</sub>=水袋内水的体积</span>
+            <span>&rArr;</span>
+            <span>排开水的重力=水袋内水的重力G</span>
+        </p>
+        <p>&dArr;</p>
+        <p class="explain">F<sub>浮</sub>=V<sub>排，所以，可以得到结论</sub></p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

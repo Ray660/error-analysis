@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <div class="box">
+
+        <table border="1">
+            <tr>
+                <th>R<sub>1</sub>断路</th>
+                <th>R<sub>1</sub>短路</th>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain">R<sub>1</sub>断路时，电流路径如下图红线所示：</p>
+                    <p class="explain" id="image"><img src="/media/image/屏幕截图_2023-11-14_154207-2.png"
+                                                       alt="断路时电流路径"></p>
+                </td>
+                <td>
+                    <p class="explain">R<sub>1</sub>短路时，电流路径如下图红线所示：</p>
+                    <p class="explain" style="color: crimson; font-size: 12px">（短路相当于用电器两端再接一段导线）</p>
+                    <p class="explain" id="image"><img src="/media/image/屏幕截图_2023-11-14_154207-3.png"
+                                                       alt="断路时电流路径"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain">
+                        <span><a href="{% url 'master:explain' point_id=47 %}">此时总电阻非常大</a></span>
+                        <span>&rArr;</span>
+                        <span><a href="{% url 'master:explain' point_id=31 %}">电流非常小，几乎为0</a></span>
+                        <span>&rArr;</span>
+                        <span>电流表无示数</span>
+                    </p>
+                </td>
+                <td>
+                    <p class="explain">
+                        <span>此时电流表测R<sub>2</sub>的电流</span>
+                        <span>&rArr;</span>
+                        <span>电流表有示数</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="explain">
+                        <span><a href="{% url 'master:explain' point_id=24 %}">此时电压表测量总电压</a></span>
+                        <span>&rArr;</span>
+                        <span>电压表有示数</span>
+                    </p>
+                </td>
+                <td>
+                    <p class="explain">
+                        <span><a href="{% url 'master:explain' point_id=44 %}">此时电压表被短路</a></span>
+                        <span>&rArr;</span>
+                        <span>电压表无示数</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; border: none;">
+                    <div class="end">
+                        <p class="explain">&dArr;</p>
+                        <p class="explain">
+                            R<sub>1</sub>断路
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+{% endblock explain %}
+</body>
+</html>

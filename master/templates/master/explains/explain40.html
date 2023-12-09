@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项讲解</title>
+</head>
+<body>
+{% extends 'master/knowledge.html' %}
+{% block explain %}
+    <style>
+      .select-explain {
+        text-align: center;
+      }
+      table.aligned-text {
+          display: inline-block;
+          text-align: left;
+        }
+      table.aligned-text >p {
+          display: inline-block;
+          text-align: center;
+      }
+
+    </style>
+    <div class="select-explain" >
+    <p>
+        R<sub>2</sub>的取值范围
+        &nbsp; &rarr; &nbsp;
+        R<sub>2</sub>的最小值？R<sub>2</sub>的最大值？
+    </p>
+    <p>&dArr;</p>
+    <table class="aligned-text">
+        <tr style="text-align: center;">
+            <td>Ⓐ<sub>max</sub>时，R<sub>2</sub>？</td>
+            <td><a href="{% url 'master:explain' point_id=24 %}">Ⓥ<sub>max</sub>时，R<sub>2</sub>？</a></td>
+        </tr>
+        <tr style="text-align: left; padding: 30px;">
+            <td>
+                Ⓐ=0.6A
+                &nbsp; <a href="{% url 'master:explain' point_id=30 %}">&rarr;</a> &nbsp;
+                I<sub>2</sub>=0.6A
+                 <br>
+                Ⓐ=0.6A
+                &nbsp; <a href="{% url 'master:explain' point_id=30 %}">&rarr;</a> &nbsp;
+                I<sub>1</sub>=0.6A
+                &nbsp; &rarr; &nbsp;
+                U<sub>1</sub>=<a href="{% url 'master:explain' point_id=31 %}">I<sub>1</sub>×R<sub>1</sub></a>=0.6A×5Ω=3V
+                &nbsp; <a href="{% url 'master:explain' point_id=28 %}">&rarr;</a> &nbsp;
+                U<sub>2</sub>=1.5V<br>
+            </td>
+            <td>
+                &nbsp;&nbsp;
+                Ⓥ=3V
+                &nbsp; <a href="{% url 'master:explain' point_id=24 %}">&rarr;</a> &nbsp;
+                U<sub>2</sub>=3V
+                &nbsp; <a href="{% url 'master:explain' point_id=28 %}">&rarr;</a> &nbsp;
+                U<sub>1</sub>=1.5V
+                &nbsp; <a href="{% url 'master:explain' point_id=31 %}">&rarr;</a> &nbsp;
+                I<sub>1</sub>=0.3A
+                &nbsp; <a href="{% url 'master:explain' point_id=30 %}">&rarr;</a> &nbsp;
+                I<sub>2</sub>=0.3A
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td>&dArr;</td>
+            <td>&dArr;</td>
+        </tr>
+        <tr style="text-align: center">
+            <td>R<sub>2</sub>=<a href="{% url 'master:explain' point_id=31 %}"> U<sub>2</sub>÷I<sub>2</sub></a>=2.5Ω</td>
+            <td>R<sub>2</sub>=<a href="{% url 'master:explain' point_id=31 %}"> U<sub>2</sub>÷I<sub>2</sub></a>=10Ω</td>
+        </tr>
+    </table>
+        <p>&dArr;</p>
+    <p>
+        2.5Ω &le; R<sub>2</sub> &le; 10Ω
+    </p>
+    </div>
+{% endblock explain %}
+</body>
+</html>

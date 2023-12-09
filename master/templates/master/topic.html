@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目展示</title>
+    <link rel="stylesheet" href="/media/css/topic.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 80%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .topic {
+            width: 100%;
+
+            color: #0c3c26;
+            line-height: 1.5;
+            background-color: #fff;
+            text-align: left;
+        }
+
+        .topic #image {
+            text-align: center;
+        }
+
+        .selections {
+            width: 90%;
+
+            color: #0c3c26;
+            line-height: 1.5;
+        }
+
+        .selection:hover {
+            color: #20AA76;
+        }
+
+        .selection input {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+
+        .button a {
+            color: #20aa76;
+            text-decoration: none;
+            margin-right: 2em;
+        }
+
+        .button a:hover {
+            color: #0c3c26;
+        }
+
+        .submit {
+            text-align: right;
+        }
+
+        .submit input {
+            margin-right: 2em;
+
+            width: 80px;
+            height: 30px;
+            border: #0C3C26 1px solid;
+            color: #0C3C26;
+            border-radius: 10px;
+        }
+
+        .submit input:hover {
+            color: #20AA76;
+        }
+
+        .radio-buttons div {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .radio-buttons div:hover {
+            color: #20AA76;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="topic">
+        {# 显示题目 #}
+        <h3>{{ next_index }}. {{ topic.topic|safe }}</h3>
+        {#        <div id="image">#}
+        {#            {% if topic.photo %}#}
+        {#                <img id='image' src=" media/{{ topic.photo }}">#}
+        {#            {% endif %}#}
+        {#        </div>#}
+    </div>
+    <br>
+    {# 显示选项 #}
+    <div class="selections" style="padding-left: 2em;">
+        <form action="{% url 'master:topic_view' topic_id=topic.id %}" method="post">
+            {% for select in topic.selections_set.all %}
+                <div class="select" id="{{ select.id }}">
+                    <h4 class="selection">{{ forloop.counter }}. {{ select.select|safe }}</h4>
+                    {#                            {% if select.select2 %}<img src="media/{{ select.select2 }}">{% endif %}</h4>#}
+
+                    {% if topic.type == 's' %}{# 选择题的选项显示 #}
+                        <div class="radio-buttons">
+                            <div><input type="radio" name="{{ select.id }}" value=True id="judge_1"><label
+                                    for="judge_1">正确</label></div>
+                            <div><input type="radio" name="{{ select.id }}" value=False id="judge_0"><label
+                                    for="judge_0">错误</label></div>
+                            <br>
+                        </div>
+                        {% block explain %}
+                            {# 如果选择错误则显示讲解 #}
+                        {% endblock %}
+                        {% elif topic.type == 'w' %}{# 主观题的显示 #}
+                        <p style="color: red">请自行在草稿纸上写题，可以在写完后点击<strong>查看答案</strong>按钮，一步一步的看解题步骤，如果有所出入，请停下来思考为什么。
+                        </p>
+                        {% block explain_w %}
+
+                        {% endblock %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            {# 按钮区 #}
+            {% block button %}
+                <div class="button">
+                    {% if topic.type != 'w' and topic.id == end_id %}
+                        <div class="submit"><input type="submit" value="提交"><a
+                                href="{% url 'master:index' %}">返回主页</a></div>
+                    {% elif topic.type == 'w' %}
+                        <div class="submit" style="text-align: left">
+                            {% url 'master:knowledge' as knowledge %}
+                            <a href="{{ knowledge }}?select_id={{ topic.selections_set.first.id }}"><input type="button"
+                                                                                                           value="查看答案"></a>
+                        </div>
+                        {% if topic.id == end_id %}
+                            <div class="submit"><input type="submit" value="下一题"></div>
+                        {% endif %}
+                    {% endif %}
+                    {% if not finished %}
+                        <span style="color: red;">请完成选择</span>
+                    {% endif %}
+                    <br>
+                    <a href="{% url 'master:index' %}">回到主页</a>
+                    {% if last_topic %}
+                        {# <input type="button" src="{% url 'master:last_topic' %}" value="上一题"> #}
+                        <a href="{% url 'master:topic_view' topic_id=last_id %}">上一题</a>
+                    {% endif %}
+                    {% if next_topic %}
+                        <a href="{% url 'master:topic_view' topic_id=n_id %}">下一题</a>
+                    {% endif %}
+                </div>
+            {% endblock button %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

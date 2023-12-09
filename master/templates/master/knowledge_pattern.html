@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>初中物理知识点</title>
+    <style>
+        body {
+            background-color: #0C3C26;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        #container {
+            display: flex;
+            background-color: #F8F8F8;
+            color: #0C3C26;
+        }
+
+        #tableOfContents {
+            width: 30%; /* 目录宽度占总宽度的20% */
+            background-color: #f9f9f9; /* 背景色 */
+            padding: 20px;
+            height: 100vh; /* 视窗高度，创建侧边栏效果 */
+            overflow: auto; /* 添加滚动条 */
+        }
+
+        #content {
+            width: 70%; /* 内容宽度占总宽度的80% */
+            padding: 20px;
+        }
+
+        #content h3 {
+            text-indent: 1em;
+        }
+
+        #content h4 {
+            text-indent: 2em;
+        }
+
+        #tableOfContents ul {
+        {#list-style: none;#}{#padding: 0;#}
+        }
+
+        #tableOfContents li a {
+            text-decoration: none;
+            color: #20AA76;
+        }
+        #tableOfContents li a:hover {
+            color: #0C3C26;
+        }
+
+        .point {
+            text-indent: 3em;
+        }
+
+        .point a {
+            text-decoration: none;
+            color: #0C3C26;
+        }
+        .point a:hover {
+            color: #20AA76;
+        }
+    </style>
+</head>
+<body>
+<h1>初中物理知识点</h1>
+<div id="container">
+    <div id="tableOfContents">
+        <h2>目录</h2>
+        <ul>
+            <li><a href="#matter">物质</a>
+                <ul>
+                    <li><a href="#matter_state_and_change">物质形态和变化</a></li>
+                    <div content="point">
+
+                    </div>
+                    <li><a href="#matter_properties">物质属性</a></li>
+                    <li><a href="#matter_structure">物质的结构和尺度</a></li>
+                    <li><a href="#new_materials">新材料及其应用</a></li>
+                </ul>
+            </li>
+            <li><a href="#motion_interaction">运动和相互作用</a>
+                <ul>
+                    <li><a href="#form_of_motion">运动形式</a></li>
+                    <li><a href="#mechanics">机械运动和力</a>
+                        <ul>
+                            <li><a href="#speed">速度</a></li>
+                            <li><a href="#basic_mechanics">基础力学</a></li>
+                            <li><a href="#force_motion">力与运动</a></li>
+                            <li><a href="#pressure">压强</a></li>
+                            <li><a href="#buoyancy">浮力</a></li>
+                            <li><a href="#simple_machines">简单机械</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#sound_light">声和光</a>
+                        <ul>
+                            <li><a href="#sound_production">声音的产生及其特性</a></li>
+                            <li><a href="#sound_application">声音的应用</a></li>
+                            <li><a href="#light_propagation">光与光的传播</a></li>
+                            <li><a href="#light_dispersion">光的色散和光的利用</a></li>
+                            <li><a href="#lens_application">透镜及其应用</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#electricity_magnetism">电和磁</a></li>
+                </ul>
+            </li>
+            <li><a href="#energy">能量</a>
+                <ul>
+                    <li><a href="#energy_transformation">能量、能量的转化和转移</a></li>
+                    <li><a href="#mechanical_energy">机械能</a></li>
+                    <li><a href="#internal_energy">内能</a></li>
+                    <li><a href="#electromagnetic_energy">电磁能</a>
+                        <ul>
+                            <li><a href="#circuit">电路</a></li>
+                            <li><a href="#ohms_law">欧姆定律</a></li>
+                            <li><a href="#electric_power">电功率</a></li>
+                            <li><a href="#electricity_use">生活用电</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#energy_conservation">能量守恒</a></li>
+                    <li><a href="#sustainable_energy">能源的可持续发展</a></li>
+                </ul>
+            </li>
+            <li><a href="#history_of_physics">物理学史</a></li>
+            <li><a href="#physics_and_life">物理与生活</a></li>
+            <li><a href="#physics_drawing">物理作图</a></li>
+            <li><a href="#experiment_and_inquiry">实验与探究</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        {% url 'master:pattern' pattern='knowledge' as the_url %}
+        <h2 id="matter">物质</h2>
+        <h3 id="matter_state_and_change">物质形态和变化</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物质的形态和变化' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="matter_properties">物质属性</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物质属性' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="matter_structure">物质的结构和尺度</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物质的结构和尺度' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="new_materials">新材料及其应用</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '新材料及其应用' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="motion_interaction">运动和相互作用</h2>
+        <h3 id="form_of_motion">运动形式</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '运动形式' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="mechanics">机械运动和力</h3>
+        <h4 id="speed">速度</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '速度' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="basic_mechanics">基础力学</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '基础力学' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="force_motion">力与运动</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '力与运动' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="pressure">压强</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '压强' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="buoyancy">浮力</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '浮力' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="simple_machines">简单机械</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '简单机械' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="sound_light">声和光</h3>
+        <h4 id="sound_production">声音的产生及其特性</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '声音的产生及其特性' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="sound_application">声音的应用</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '声音的应用' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="light_propagation">光与光的传播</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '光与光的传播' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="light_dispersion">光的色散和光的利用</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '光的色散和光的利用' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="lens_application">透镜及其应用</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '透镜及其应用' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="electricity_magnetism">电和磁</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '电和磁' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="energy">能量</h2>
+        <h3 id="energy_transformation">能量、能量的转化和转移</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '能量、能量的转化和转移' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="mechanical_energy">机械能</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '机械能' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="internal_energy">内能</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '内能' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="electromagnetic_energy">电磁能</h3>
+        <h4 id="circuit">电路</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '电路' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="ohms_law">欧姆定律</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '欧姆定律' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="electric_power">电功率</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '电功率' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h4 id="electricity_use">生活用电</h4>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '生活用电' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="energy_conservation">能量守恒</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '能量守恒' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h3 id="sustainable_energy">能源的可持续发展</h3>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '能源的可持续发展' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="history_of_physics">物理学史</h2>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物理学史' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="physics_and_life">物理与生活</h2>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物理与生活' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="physics_drawing">物理作图</h2>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '物理作图' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2 id="experiment_and_inquiry">实验与探究</h2>
+        <div class="point">
+            {% for point in points %}
+                {% if point.type == '实验与探究' %}
+                    <p>
+                        <a href="{{ the_url }}?know_pid={{ point.id }}">{{ point.point }}</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

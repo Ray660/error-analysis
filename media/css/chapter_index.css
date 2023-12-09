@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: #fff;
+}
+
+.head {
+    width: 100%;
+    background-color: #0C4B33;
+    display: block;
+    padding: 0;
+    height: 80px;
+}
+
+.logo {
+    height: 80px;
+    text-align: left;
+    /*width: 20%;*/
+    float: left;
+    font-size: 2rem;
+    line-height: 80px;
+    text-indent: 2em;
+}
+div.logo>a {
+    color: white;
+    text-decoration: none;
+}
+.logo a:hover{
+    color: aquamarine;
+}
+
+.editions {
+    float: right;
+    width: 80%;
+    /*padding-right: 20px;*/
+    text-align: right;
+    color: white;
+}
+
+.editions span {
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 5px;
+}
+
+.editions a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.editions a:hover {
+    color: aquamarine;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+}
+.tableofcontent {
+    width: 20%;
+    background-color: #f9f9f9;
+}
+.tableofcontent a {
+    color: #20AA76;
+    text-decoration: none;
+}
+.tableofcontent a:hover {
+    color: #0C3C26;
+}
+.contents {
+    width: 80%;
+    float: right;
+    color: #0C3C26;
+}
+.contents ul {
+    list-style: none;
+}
+h2 {
+    color: #0C3C26;
+    padding: 0 5px;
+}
+.contents .grade {
+    border: #0C4B33 dashed 3px;
+    background-color: #20AA76;
+}
+.grade {
+    text-indent: 1em;
+    line-height: 2;
+    /*font-size: 20px;*/
+}
+.chapter {
+    text-indent: 2em;
+    /*font-size: 18px;*/
+    line-height: 2;
+}
+.nodule {
+    text-indent: 3em;
+    font-size: 15px;
+    line-height: 2;
+}
+.contents a{
+    text-decoration: none;
+    color: #0C3C26;
+}
+.contents a:hover {
+    color: #20AA76;
+}
